@@ -15,9 +15,10 @@ class ClosedRangeTest extends TestCase
     /**
      * @test
      */
-    public function FunctionName()
+    public function ClosedRangeオブジェクトが作成できること()
     {
-        $this->assertTrue(true);
+        $range = new ClosedRange();
+        $this->assertTrue($range instanceof ClosedRange);
     }
 }
 
