@@ -21,5 +21,23 @@ class ClosedRangeTest extends TestCase
         $range = new ClosedRange(3, 8);
         $this->assertTrue($range instanceof ClosedRange);
     }
+
+    /**
+     * @test
+     */
+    public function 下端点が取得できること()
+    {
+        $range = new ClosedRange(3, 8);
+        $this->assertSame(3, $range->lower_endpoint);
+    }
+
+    /**
+     * @test
+     */
+    public function 上端点が取得できること()
+    {
+        $range = new ClosedRange(3, 8);
+        $this->assertSame(8, $range->upper_endpoint);
+    }
 }
 
