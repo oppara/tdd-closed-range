@@ -3,5 +3,10 @@
     "require-dev": {
         "phpunit/phpunit": "^6.3"
     },
-    "require": {}
+    "require": {},
+    "scripts": {
+      "test": [
+        "phpunit --colors=always --test-suffix 'Test.php' tests/"
+      ]
+    }
 }
