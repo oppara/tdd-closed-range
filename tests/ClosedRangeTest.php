@@ -39,5 +39,14 @@ class ClosedRangeTest extends TestCase
         $range = new ClosedRange(3, 8);
         $this->assertSame(8, $range->upper_endpoint);
     }
+
+    /**
+     * @test
+     */
+    public function 区間の文字列表現が取得できること()
+    {
+        $range = new ClosedRange(3, 8);
+        $this->assertSame('[3,8]', $range);
+    }
 }
 
