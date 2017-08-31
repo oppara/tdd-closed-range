@@ -71,12 +71,23 @@ class ClosedRangeTest extends TestCase
 
     /**
      * @test
+     * @dataProvider includeProvider
      */
-    public function 指定した定数が含むか判定出来ること()
+    public function 指定した定数が含むか判定出来ること($expected, $num)
     {
         $range = new ClosedRange(3, 8);
-        $this->assertTrue($range->include(3));
-        $this->assertSame(true, $range->include(3));
+        $this->assertSame($expected, $range->include($num));
+    }
+
+    public function includeProvider()
+    {
+        return [
+            [ false, 2 ],
+            [ true, 3 ],
+            [ true, 5 ],
+            [ true, 8 ],
+            [ false, 9 ],
+        ];
     }
 
 }

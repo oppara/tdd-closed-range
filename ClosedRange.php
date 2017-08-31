@@ -16,6 +16,13 @@ class ClosedRange
 
     public function include($num)
     {
+        if ($num < $this->range['lower_endpoint']) {
+            return false;
+        }
+        if ($num > $this->range['upper_endpoint']) {
+            return false;
+        }
+
         return true;
     }
 
