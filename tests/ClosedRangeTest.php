@@ -112,5 +112,15 @@ class ClosedRangeTest extends TestCase
         ];
 
     }
+
+    /**
+     * @test
+     */
+    public function 別の閉区間が完全に含まれるか判定できること()
+    {
+        $range = new ClosedRange(3, 8);
+        $other_range = new ClosedRange(3, 8);
+        $this->assertSame(true, $range->contain($other_range));
+    }
 }
 
