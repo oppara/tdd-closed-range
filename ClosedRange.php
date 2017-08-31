@@ -14,6 +14,11 @@ class ClosedRange
         $this->range['upper_endpoint'] = $upper_endpoint;
     }
 
+    public function include($num)
+    {
+        return true;
+    }
+
     public function __get($name)
     {
         if (array_key_exists($name, $this->range)) {
