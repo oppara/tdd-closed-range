@@ -92,13 +92,25 @@ class ClosedRangeTest extends TestCase
 
     /**
      * @test
+     * @dataProvider equalsProvider
      */
-    public function 別の閉区間と等価か判定できること()
+    public function 別の閉区間と等価か判定できること($expected, $lower, $upper)
     {
         $range = new ClosedRange(3, 8);
-        $other_range = new ClosedRange(3, 8);
-        $this->assertSame(true, $range->equals($other_range));
+        $other_range = new ClosedRange($lower, $upper);
+        $this->assertSame($expected, $range->equals($other_range));
     }
 
+    public function equalsProvider()
+    {
+        return [
+            [true, 3, 8],
+            [false, 4, 8],
+            [false, 2, 8],
+            [false, 3, 9],
+            [false, 3, 7],
+        ];
+
+    }
 }
 
