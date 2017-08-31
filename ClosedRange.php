@@ -34,6 +34,14 @@ class ClosedRange
         );
     }
 
+    public function contain($other_range)
+    {
+        return (
+            $this->range['lower_endpoint'] <= $other_range->lower_endpoint
+                && $this->range['upper_endpoint'] >= $other_range->upper_endpoint
+        );
+    }
+
     public function __get($name)
     {
         if (array_key_exists($name, $this->range)) {
