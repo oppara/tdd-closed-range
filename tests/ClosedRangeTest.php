@@ -97,7 +97,7 @@ class ClosedRangeTest extends TestCase
     {
         $range = new ClosedRange(3, 8);
         $other_range = new ClosedRange(3, 8);
-        $this->assertSame($expected, $range->equals($other_range));
+        $this->assertSame(true, $range->equals($other_range));
     }
 
 }
