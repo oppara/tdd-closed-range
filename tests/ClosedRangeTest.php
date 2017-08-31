@@ -68,5 +68,16 @@ class ClosedRangeTest extends TestCase
         $range = new ClosedRange(3, 8);
         $this->assertSame('[3,8]', sprintf('%s', $range));
     }
+
+    /**
+     * @test
+     */
+    public function 指定した定数が含むか判定出来ること()
+    {
+        $range = new ClosedRange(3, 8);
+        $this->assertTrue($range->include(3));
+        $this->assertSame(true, $range->include(3));
+    }
+
 }
 
